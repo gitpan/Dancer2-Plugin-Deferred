@@ -2,7 +2,7 @@ NAME
     Dancer2::Plugin::Deferred - Defer messages or data across redirections
 
 VERSION
-    version 0.004
+    version 0.005
 
 SYNOPSIS
       use Dancer2::Plugin::Deferred;

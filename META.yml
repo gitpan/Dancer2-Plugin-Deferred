@@ -16,7 +16,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
 license: apache
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -33,10 +33,10 @@ no_index:
 provides:
   Dancer2::Plugin::Deferred:
     file: lib/Dancer2/Plugin/Deferred.pm
-    version: 0.004
+    version: 0.005
 requires:
   Carp: 0
-  Dancer2::Plugin: 0
+  Dancer2::Plugin: 0.05
   URI: 0
   URI::QueryParam: 0
   perl: 5.010
@@ -46,6 +46,7 @@ resources:
   bugtracker: https://github.com/dagolden/dancer2-plugin-deferred/issues
   homepage: https://metacpan.org/release/Dancer2-Plugin-Deferred
   repository: git://github.com/dagolden/dancer2-plugin-deferred.git
-version: 0.004
+version: 0.005
+x_authority: cpan:DAGOLDEN
 x_contributors:
   - 'Damien Krotkine <dams@zarb.org>'

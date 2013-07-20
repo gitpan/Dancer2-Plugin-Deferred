@@ -4,13 +4,13 @@ use warnings;
 
 package Dancer2::Plugin::Deferred;
 # ABSTRACT: Defer messages or data across redirections
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 use Carp qw/croak/;
 use URI;
 use URI::QueryParam;
 
-use Dancer2::Plugin;
+use Dancer2::Plugin 0.05;
 
 my $conf;
 
@@ -92,11 +92,8 @@ sub _get_conf {
     };
 }
 
-# XXX gross hack until D2::Plugin gets support for acting on
-# every import
-
-sub import {
-    my $dsl = Dancer2::Plugin::_get_dsl();
+on_plugin_import {
+    my $dsl = shift;
 
     $dsl->app->add_hook(
         Dancer2::Core::Hook->new(
@@ -135,9 +132,9 @@ sub import {
             }
         )
     );
-}
+};
 
-register_plugin for_versions => [2];
+register_plugin;
 
 1;
 
@@ -148,13 +145,15 @@ __END__
 
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dancer2::Plugin::Deferred - Defer messages or data across redirections
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
