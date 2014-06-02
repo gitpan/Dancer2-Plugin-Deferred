@@ -4,13 +4,13 @@ use warnings;
 
 package Dancer2::Plugin::Deferred;
 # ABSTRACT: Defer messages or data across redirections
-our $VERSION = '0.005'; # VERSION
-
+# VERSION
+$Dancer2::Plugin::Deferred::VERSION = '0.006';
 use Carp qw/croak/;
 use URI;
 use URI::QueryParam;
 
-use Dancer2::Plugin 0.05;
+use Dancer2::Plugin qw(:no_dsl);
 
 my $conf;
 
@@ -88,7 +88,6 @@ sub _get_conf {
         params_key         => 'dpdid',
         session_key_prefix => 'dpd_',
         template_key       => 'deferred',
-        %{ plugin_setting() },
     };
 }
 
@@ -145,7 +144,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -153,7 +152,7 @@ Dancer2::Plugin::Deferred - Defer messages or data across redirections
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -227,83 +226,27 @@ variable to true to ensure the message remains to be retrieved by the link.
 
 =head1 CONFIGURATION
 
-=over 4
-
-=item *
-
-C<var_key: dpdid> -- this is the key in the C<var> hash containing the message ID
-
-=item *
-
-C<var_keep_key: dpd_keep> -- if this key in C<var> is true, retrieving values will not be destructive
-
-=item *
-
-C<params_key: dpdid> -- this is the key in the C<params> hash containing the message ID
-
-=item *
-
-C<session_key_prefix>: dpd_> -- the message ID is appended to this prefix and used to store deferred data in the session
-
-=item *
-
-C<template_key: deferred> -- this is the key to deferred data passed to the template
-
-=back
+=for :list * C<var_key: dpdid> -- this is the key in the C<var> hash containing the message ID
+* C<var_keep_key: dpd_keep> -- if this key in C<var> is true, retrieving values will not be destructive
+* C<params_key: dpdid> -- this is the key in the C<params> hash containing the message ID
+* C<session_key_prefix: dpd_> -- the message ID is appended to this prefix and used to store deferred data in the session
+* C<template_key: deferred> -- this is the key to deferred data passed to the template
 
 =head1 SEE ALSO
 
-=over 4
-
-=item *
-
-L<Dancer2>
-
-=item *
-
-L<Dancer::Plugin::FlashMessage>
-
-=item *
-
-L<Dancer::Plugin::FlashNote>
-
-=item *
-
-L<Catalyst::Plugin::StatusMessage>
-
-=back
+=for :list * L<Dancer2>
+* L<Dancer::Plugin::FlashMessage>
+* L<Dancer::Plugin::FlashNote>
+* L<Catalyst::Plugin::StatusMessage>
 
 =head1 ACKNOWLEDGMENTS
 
 Thank you to mst for explaining why L<Catalyst::Plugin::StatusMessages> does
 what it does and putting up with my dumb ideas along the way.
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
-
-=head1 SUPPORT
-
-=head2 Bugs / Feature Requests
-
-Please report any bugs or feature requests through the issue tracker
-at L<https://github.com/dagolden/dancer2-plugin-deferred/issues>.
-You will be notified automatically of any progress on your issue.
-
-=head2 Source Code
-
-This is open source software.  The code repository is available for
-public review and contribution under the terms of the license.
-
-L<https://github.com/dagolden/dancer2-plugin-deferred>
-
-  git clone git://github.com/dagolden/dancer2-plugin-deferred.git
-
 =head1 AUTHOR
 
 David Golden <dagolden@cpan.org>
-
-=head1 CONTRIBUTOR
-
-Damien Krotkine <dams@zarb.org>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -5,48 +5,37 @@ author:
 build_requires:
   Dancer2: 0
   ExtUtils::MakeMaker: 0
-  File::Find: 0
+  File::Spec: 0
   File::Spec::Functions: 0
-  File::Temp: 0
+  IO::Handle: 0
+  IPC::Open3: 0
   LWP::UserAgent: 0
   List::Util: 0
+  Module::Build: 0.3601
   Test::More: 0.96
   Test::TCP: 0
   perl: 5.010
+  version: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
+  Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
 license: apache
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Dancer2-Plugin-Deferred
-no_index:
-  directory:
-    - t
-    - xt
-    - examples
-    - corpus
-  package:
-    - DB
 provides:
   Dancer2::Plugin::Deferred:
     file: lib/Dancer2/Plugin/Deferred.pm
-    version: 0.005
+    version: 0.006
 requires:
   Carp: 0
-  Dancer2::Plugin: 0.05
+  Dancer2::Plugin: 0
   URI: 0
   URI::QueryParam: 0
   perl: 5.010
   strict: 0
   warnings: 0
-resources:
-  bugtracker: https://github.com/dagolden/dancer2-plugin-deferred/issues
-  homepage: https://metacpan.org/release/Dancer2-Plugin-Deferred
-  repository: git://github.com/dagolden/dancer2-plugin-deferred.git
-version: 0.005
-x_authority: cpan:DAGOLDEN
-x_contributors:
-  - 'Damien Krotkine <dams@zarb.org>'
+version: 0.006
