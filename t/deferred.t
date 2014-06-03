@@ -10,6 +10,7 @@ use LWP::UserAgent;
 
 test_tcp(
   client => sub {
+    
     my $port = shift;
     my $url  = "http://localhost:$port/";
 
@@ -39,7 +40,7 @@ test_tcp(
     set confdir => '.';
     set port => $port, startup_info => 0;
 
-    Dancer2->runner->server->port($port);
+    Dancer2->runner->server;
     @{engine('template')->config}{qw(start_tag end_tag)} = qw(<% %>);
 
     set show_errors => 1;
@@ -67,6 +68,7 @@ test_tcp(
 
     start;
   },
+  port => 3000,
 );
 done_testing;
 
