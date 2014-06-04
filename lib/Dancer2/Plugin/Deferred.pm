@@ -5,7 +5,7 @@ use warnings;
 package Dancer2::Plugin::Deferred;
 # ABSTRACT: Defer messages or data across redirections
 # VERSION
-$Dancer2::Plugin::Deferred::VERSION = '0.007';
+$Dancer2::Plugin::Deferred::VERSION = '0.007001';
 use Carp qw/croak/;
 use URI;
 use URI::QueryParam;
@@ -152,7 +152,7 @@ Dancer2::Plugin::Deferred - Defer messages or data across redirections
 
 =head1 VERSION
 
-version 0.007
+version 0.007001
 
 =head1 SYNOPSIS
 
