@@ -19,7 +19,7 @@ my %module_build_args = (
     "David Golden <dagolden\@cpan.org>"
   ],
   "dist_name" => "Dancer2-Plugin-Deferred",
-  "dist_version" => "0.007015",
+  "dist_version" => "0.006",
   "license" => "apache",
   "module_name" => "Dancer2::Plugin::Deferred",
   "recommends" => {},
